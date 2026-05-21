@@ -3,179 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Rooftop Cafe</title>
+    <title>Ciel Rooftop Cafe | سيل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background-color: #0b0c10;
-            color: #f5f5f5;
+            background-color: #0a0a0a;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            background: radial-gradient(circle at center, #1f1a15 0%, #0a0a0a 100%);
         }
 
         .container {
+            background-color: #141414;
+            border-radius: 24px;
             width: 100%;
-            max-width: 430px;
-            background: rgba(20, 20, 20, 0.65);
-            border: 1px solid rgba(223, 195, 154, 0.15);
-            border-radius: 28px;
-            padding: 35px 25px;
+            max-width: 420px;
+            padding: 40px 25px;
             text-align: center;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 1px solid #222;
         }
 
-        /* اللوجو النصي الدائري الفخم */
-        .logo-area {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .text-logo {
+        /* تنسيق اللوجو النصي */
+        .logo-container {
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #16161a 0%, #26211c 100%);
-            border: 2px solid #dfc39a;
+            border: 2px solid #cfaa63;
+            margin: 0 auto 20px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: #dfc39a;
-            font-size: 26px;
+            justify-content: center;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(207, 170, 99, 0.2);
+        }
+
+        .logo-container h2 {
+            color: #cfaa63;
+            font-size: 28px;
             font-weight: 700;
-            text-transform: capitalize;
-            box-shadow: 0 0 25px rgba(223, 195, 154, 0.2), inset 0 0 15px rgba(223, 195, 154, 0.1);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            position: relative;
-        }
-
-        /* خط الدوران المتقطع حول الدائرة */
-        .text-logo::after {
-            content: '';
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 1px dashed rgba(223, 195, 154, 0.35);
-            top: -7px;
-            left: -7px;
-            animation: rotate 25s linear infinite;
-        }
-
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
+            letter-spacing: 1px;
         }
 
         h1 {
-            font-size: 28px;
-            color: #fff;
-            margin-bottom: 8px;
+            font-size: 26px;
+            margin-bottom: 5px;
             font-weight: 700;
         }
 
-        .tagline {
-            color: #dfc39a;
+        .subtitle {
+            color: #cfaa63;
             font-size: 13px;
-            text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 25px;
-            font-weight: 600;
-            opacity: 0.9;
+            text-transform: uppercase;
         }
 
-        .bio {
-            font-size: 14.5px;
-            line-height: 1.7;
-            color: #cccccc;
-            margin-bottom: 25px;
-            padding: 0 5px;
-        }
-
-        .highlight-box {
-            background: linear-gradient(90deg, rgba(223, 195, 154, 0.08) 0%, rgba(223, 195, 154, 0.01) 100%);
-            border-right: 4px solid #dfc39a;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            text-align: right;
-        }
-
-        .highlight-box p {
+        .description {
             font-size: 15px;
-            color: #dfc39a;
-            font-weight: 600;
+            color: #b3b3b3;
+            line-height: 1.7;
+            margin-bottom: 25px;
         }
 
-        .links-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .action-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 18px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #fff;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: right;
-        }
-
-        .action-card:hover {
-            background: rgba(223, 195, 154, 0.1);
-            border-color: rgba(223, 195, 154, 0.5);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
-
-        .card-icon {
-            width: 42px;
-            height: 42px;
-            background: rgba(223, 195, 154, 0.08);
+        /* العبارة المميزة */
+        .quote-box {
+            background: linear-gradient(135deg, #1f1c14, #121212);
+            border-right: 4px solid #cfaa63;
             border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 30px;
+            color: #e8d097;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* تنسيق الأزرار */
+        .btn {
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin-left: 15px;
-            flex-shrink: 0;
-            border: 1px solid rgba(223, 195, 154, 0.15);
-        }
-
-        .card-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: #dfc39a;
-        }
-
-        .card-content {
-            flex-grow: 1;
-        }
-
-        .card-title {
+            justify-content: space-between;
+            background-color: #1c1c1c;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin-bottom: 15px;
             font-size: 16px;
             font-weight: 600;
-            color: #ffffff;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s ease;
         }
 
-        .footer {
-            margin-top: 40px;
+        .btn:hover {
+            background-color: #252525;
+            border-color: #cfaa63;
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            font-size: 22px;
+            color: #cfaa63;
+        }
+
+        .footer-text {
+            margin-top: 35px;
             font-size: 11px;
-            color: #444;
+            color: #555;
             letter-spacing: 1px;
         }
     </style>
@@ -183,48 +130,47 @@
 <body>
 
     <div class="container">
-        <div class="logo-area">
-            <div class="text-logo">Ciel</div>
+        <div class="logo-container">
+            <h2>Ciel</h2>
         </div>
 
-        <h1>سيل | Ciel</h1>
-        <div class="tagline">Rooftop Cafe & Lounge</div>
-        
-        <p class="bio">
+        <h1>Ciel | سيل</h1>
+        <div class="subtitle">Rooftop Cafe & Lounge</div>
+
+        <div class="description">
             اكتشف سيل... روف توب كافيه، حيث ترتقي نكهة القهوة الفاخرة والفخامة إلى أبعد من السحاب. إطلالة ساحرة وأجواء تليق بجمال أوقاتكم.
-        </p>
-
-        <div class="highlight-box">
-            <p>"في سيل، نصنع لك لحظات لا تُنسى.. لأن Ciel دائماً هو التوب! ✨☁️"</p>
         </div>
 
-        <div class="links-wrapper">
-            
-            <a href="tel:0777710107" class="action-card">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6.62,10.79C8.06,13.62 10.38,15.93 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <div class="card-title">تواصل معنا</div>
-                </div>
-            </a>
-
-            <a href="https://maps.google.com" target="_blank" class="action-card">
-                <div class="card-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <div class="card-title">موقعنا GPS</div>
-                </div>
-            </a>
-
+        <div class="quote-box">
+            "في سيل، نصنع لك لحظات لا تُنسى.. لأن Ciel دائماً هو التوب! ✨☁️"
         </div>
 
-        <div class="footer">
+        <a href="tel:0777710107" class="btn">
+            <span>تواصل معنا</span>
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="Https://maps.app.goo.gl/tCBAo4HuDFH8o5Yf9?g_st=awb" target="_blank" class="btn">
+            <span>موقعنا GPS</span>
+            <i class="fa-solid fa-location-dot"></i>
+        </a>
+
+        <a href="https://wa.me/message/7DEMZVJQUGUIJ1" target="_blank" class="btn">
+            <span>واتساب</span>
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://www.instagram.com/cielrooftopirbid?utm_source=qr&igsh=MWVmbGVwOTY3dHJxNw==" target="_blank" class="btn">
+            <span>إنستغرام</span>
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/15vXsSbJAhm/" target="_blank" class="btn">
+            <span>فيسبوك</span>
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <div class="footer-text">
             © 2026 CIEL ROOFTOP. ALL RIGHTS RESERVED.
         </div>
     </div>
